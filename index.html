@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+  <title>Juego del 21</title>
+</head>
+
+<body>
+  <h1>Juego del 21</h1>
+  <div class="contendedor" id="contenedor">
+    <div class="baraja" id="baraja">
+      <img src="img/Baraja.jpg">
+    </div>
+    <div class="carta" id="carta">
+      <img src="img/Baraja.jpg">
+    </div>
+  </div>
+  <button id="mezclar">Mezclar mazo</button>
+  <button id="pedir">Pedir cartas</button>
+  <button id="validar">Validar cartas</button>
+
+  <div class="info" id="info">
+    <label for="">La suma de sus cartas es :</label>
+    <label id="suma"></label>
+  </div>
+
+  <label id="resultado" class="resultado"></label>
+</body>
+<script src="carta.js"></script>
+<script>
+  var fabrica = new Fabrica();
+  fabrica.crearBarajas();
+  fabrica.mezclar();
+  var juego = new Juego();
+  juego.crearBarajas();
+  document.getElementById("mezclar").addEventListener("click", function () {
+    juego.mezclar();
+    console.log(juego.mazo);
+  })
+
+
+  document.getElementById("pedir").addEventListener("click", function () {
+    document.getElementById("carta").innerHTML = '<img src="img/' + juego.pedir()+'"'+'>';
+  })
+
+  document.getElementById("validar").addEventListener('click', function () {
+    console.log(juego.nuevaBaraja);
+    document.getElementById("suma").innerHTML=juego.validar();
+
+  })
+
+</script>
+
+</html>

@@ -1,0 +1,33 @@
+h1{
+    color:rgb(150, 22, 22);
+    font: size 20px ;
+    text-align: center;
+}
+#contenedor{
+    display: flex;
+}
+.baraja{
+    margin-left: 32%;
+}
+.carta{
+    margin-left: 110px;
+}
+
+.resultado{
+    margin-left: 37%;
+    font-size: 45px;
+}
+.info{
+    margin-left: 39%;
+    margin-top: 20px;
+}
+#validar{
+    margin-left: 50px;
+}
+#mezclar{
+    margin-left: 34%;
+
+}
+#pedir{
+    margin-left: 50px;
+}
